@@ -8,30 +8,22 @@ import axios from "axios";
 class Category extends React.Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
+    
     this.state = {
       // "DataSource" is some global data source
+      categoryDate: []
       
     };
   }
 
   componentDidMount() {
-    // Subscribe to changes
+     
     this.getCategory();
   }
 
-  componentWillUnmount() {
-    // Clean up listener
+   
 
-  }
-
-  handleChange() {
-    // Update component state whenever the data source changes
-    this.setState({
-      
-
-    });
-  }
+  
 
   async getCategory() {
 
@@ -40,6 +32,11 @@ class Category extends React.Component {
       .then((res) => { 
 
         console.log(res)
+
+        this.setState({
+          
+          categoryDate: res.data
+        });
       })
       .catch((err) => {
         console.log(err)
@@ -52,7 +49,10 @@ class Category extends React.Component {
     return (
       <div>
        
-       gfdfg 
+       {this.state.categoryDate.map(item =>  
+          <div key='item.id'> {item.name} </div>
+
+        )} 
 
       </div>
     );
@@ -60,4 +60,3 @@ class Category extends React.Component {
 }
 
 export default Category;
-
