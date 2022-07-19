@@ -16,7 +16,7 @@ class Category extends React.Component {
       
     };
 
-    this.getCategory = this.getCategory.bind(this);
+     
   }
 
   componentDidMount() {
