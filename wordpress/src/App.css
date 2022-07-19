@@ -41,3 +41,19 @@
     transform: rotate(360deg);
   }
 }
+
+#category{
+  display: flex;
+  clear: both;
+  width: 100%;
+}
+#category .category{
+  display: flex;
+  flex: auto;
+  margin: 5px;
+}
+#category .category:hover{
+  cursor: pointer;
+  color: blue;
+
+}
