@@ -63,7 +63,7 @@ class Category extends React.Component {
       <div id="category">
        
        {this.state.categoryDate.map(item =>  
-          <span key='item.id'> {item.name} </span>
+          <span key={item.id}> {item.name} </span>
 
         )} 
 

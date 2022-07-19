@@ -65,7 +65,7 @@ class Post extends React.Component {
       <div id="post">
        
        {this.state.postDate.map(item =>  
-        <div key="item.link">
+        <div key={item.link}>
           <span> {item.title.rendered} {item.link}</span>
           <div className='content'> {item.content.rendered} </div>
 
