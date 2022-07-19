@@ -18,14 +18,14 @@ class Post extends React.Component {
 
   componentDidMount() {
      
-    this.getCategory();
+    this.getPost();
   }
 
    
 
   
 
-  async getCategory() {
+  async getPost() {
 
     await axios.get("/wp-json/wp/v2/posts")
   

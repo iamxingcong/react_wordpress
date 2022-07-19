@@ -21,6 +21,17 @@ class Category extends React.Component {
 
   componentDidMount() {
      
+      this.getCategory();
+    
+    
+  }
+
+   
+
+  
+
+   getCategory() {
+    
      axios.get("/wp-json/wp/v2/categories")
   
       .then((res) => { 
@@ -35,15 +46,8 @@ class Category extends React.Component {
       .catch((err) => {
         console.log(err)
        });
-    
-    
   }
 
-   
-
-  
-
-   
 
 
   render() {
