@@ -4,9 +4,9 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function(app) {
   app.use(
-    '/wordpress',
+    '/wp-json',
     createProxyMiddleware({
-      target: 'http://192.168.1.15/wordpress/index.php/wp-json/wp/v2/',
+      target: 'http://192.168.1.15/wordpress/index.php/wp-json/',
       changeOrigin: true,
     })
   );
