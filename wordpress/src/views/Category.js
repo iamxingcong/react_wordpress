@@ -35,7 +35,7 @@ class Category extends React.Component {
 
   async getCategory() {
 
-    await axios.get("/wp-json/wp/v2/categories")
+    await axios.get("categories")
   
       .then((res) => { 
 
