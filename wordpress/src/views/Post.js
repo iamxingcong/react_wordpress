@@ -19,29 +19,43 @@ class Post extends React.Component {
 
   componentDidMount() {
      
-    this.getPost();
+   this.getPost(this.state.num);
+   this.setState({
+      num: this.state.num++
+    })
   }
 
    
 
   
 
-  async getPost() {
+  async getPost(v) {
 
-    await axios.get("/wp-json/wp/v2/posts")
-  
-      .then((res) => { 
+    console.log(v)
 
-        console.log(res)
+    if(v === 1){
+      return false;
+    } else {
+    
 
-        this.setState({
-          
-          postDate: res.data
-        });
-      })
-      .catch((err) => {
-        console.log(err)
-       });
+
+      await axios.get("/wp-json/wp/v2/posts")
+    
+        .then((res) => { 
+
+          console.log(res)
+
+          this.setState({
+            
+            postDate: res.data
+          });
+        })
+        .catch((err) => {
+          console.log(err)
+         });
+
+
+    } 
   }
 
 
