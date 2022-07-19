@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 
-class Category extends React.Component {
+class Post extends React.Component {
   constructor(props) {
     super(props);
     
@@ -27,7 +27,7 @@ class Category extends React.Component {
 
   async getCategory() {
 
-    await axios.get("/wp-json/wp/v2/categories")
+    await axios.get("/wp-json/wp/v2/posts")
   
       .then((res) => { 
 
@@ -47,10 +47,10 @@ class Category extends React.Component {
 
   render() {
     return (
-      <div id="category">
+      <div id="post">
        
        {this.state.categoryDate.map(item =>  
-          <span className="category" key='item.id'> {item.name} </span>
+          <span className="post" key='item.link'> {item.title.rendered} </span>
 
         )} 
 
@@ -59,4 +59,4 @@ class Category extends React.Component {
   }
 }
 
-export default Category;
+export default Post;
