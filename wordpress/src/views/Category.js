@@ -10,7 +10,7 @@ class Category extends React.Component {
     super(props);
     
     this.state = {
-      // "DataSource" is some global data source
+      
       categoryDate: []
       
     };
