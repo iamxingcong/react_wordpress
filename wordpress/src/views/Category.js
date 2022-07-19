@@ -11,7 +11,8 @@ class Category extends React.Component {
     
     this.state = {
       
-      categoryDate: []
+      categoryDate: [],
+      num: 0,
       
       
     };
@@ -21,8 +22,11 @@ class Category extends React.Component {
 
   componentDidMount() {
      
-      this.getCategory();
-    
+
+      this.getCategory(this.state.num);
+      this.setState({
+        num: this.state.num++
+      })
     
   }
 
@@ -30,7 +34,11 @@ class Category extends React.Component {
 
   
 
-   getCategory() {
+   getCategory(v) {
+    console.log(v)
+    if(v === 1){
+      return false;
+    }
     
      axios.get("/wp-json/wp/v2/categories")
   
@@ -55,7 +63,7 @@ class Category extends React.Component {
       <div id="category">
        
        {this.state.categoryDate.map(item =>  
-          <span className="category" key='item.id'> {item.name} </span>
+          <span key='item.id'> {item.name} </span>
 
         )} 
 

@@ -51,7 +51,7 @@ class Post extends React.Component {
        
        {this.state.categoryDate.map(item =>  
         <div key="item.link">
-          <span className="post"> {item.title.rendered} </span>
+          <span> {item.title.rendered} {item.link}</span>
           <div className='content'> {item.content.rendered} </div>
 
 

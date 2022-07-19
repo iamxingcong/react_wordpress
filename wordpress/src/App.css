@@ -47,12 +47,12 @@
   clear: both;
   width: 100%;
 }
-#category .category{
+#category .span{
   display: flex;
   flex: auto;
   margin: 5px;
 }
-#category .category:hover{
+#category .span:hover{
   cursor: pointer;
   color: blue;
 
