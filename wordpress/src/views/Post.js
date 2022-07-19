@@ -11,7 +11,8 @@ class Post extends React.Component {
     
     this.state = {
       
-      categoryDate: []
+      postDate: [],
+      num: 0
       
     };
   }
@@ -35,7 +36,7 @@ class Post extends React.Component {
 
         this.setState({
           
-          categoryDate: res.data
+          postDate: res.data
         });
       })
       .catch((err) => {
@@ -49,7 +50,7 @@ class Post extends React.Component {
     return (
       <div id="post">
        
-       {this.state.categoryDate.map(item =>  
+       {this.state.postDate.map(item =>  
         <div key="item.link">
           <span> {item.title.rendered} {item.link}</span>
           <div className='content'> {item.content.rendered} </div>
