@@ -20,9 +20,7 @@ class Post extends React.Component {
   componentDidMount() {
      
    this.getPost(this.state.num);
-   this.setState({
-      num: this.state.num++
-    })
+
   }
 
    
@@ -33,9 +31,6 @@ class Post extends React.Component {
 
     console.log(v)
 
-    if(v === 1){
-      return false;
-    } else {
     
 
 
@@ -55,7 +50,7 @@ class Post extends React.Component {
          });
 
 
-    } 
+    
   }
 
 
@@ -67,8 +62,7 @@ class Post extends React.Component {
        {this.state.postDate.map(item =>  
         <div key={item.link}>
           <span> {item.title.rendered} {item.link}</span>
-          <div className='content'> {item.content.rendered} </div>
-
+          <div dangerouslySetInnerHTML={{ __html: item.content.rendered }}></div>
 
         </div > 
 

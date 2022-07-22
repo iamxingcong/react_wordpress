@@ -24,9 +24,7 @@ class Category extends React.Component {
      
 
       this.getCategory(this.state.num);
-      this.setState({
-        num: this.state.num++
-      })
+     
     
   }
 
@@ -34,13 +32,11 @@ class Category extends React.Component {
 
   
 
-   getCategory(v) {
+   async getCategory(v) {
     console.log(v)
-    if(v === 1){
-      return false;
-    }
+   
     
-     axios.get("/wp-json/wp/v2/categories")
+     await axios.get("/wp-json/wp/v2/categories")
   
       .then((res) => { 
 
